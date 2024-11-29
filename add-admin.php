@@ -3,15 +3,14 @@
 	error_reporting(0);
 	include('includes/dbconn.php');
     include('includes/header.php');
-	if (strlen($_SESSION['vpmsaid']==0)) {
+	if (strlen($_SESSION['user_id']==0)) {
 	header('location:logout.php');
 	} else {
 
 	if(isset($_POST['add-new-admin'])) {
-		//$parkingnumber=mt_rand(10000, 99999);
 		$FullName=$_POST['FullName'];
 		$Username=$_POST['Username'];
-		$Password=md5($_POST['Password']);
+		$Password = password_hash($_POST['Password'], PASSWORD_BCRYPT);
 		$Email=$_POST['Email'];
 		$MobileNumber=$_POST['MobileNumber'];
 		$SecurityCode=$_POST['SecurityCode'];
@@ -33,7 +32,7 @@
             $msg="Something Went Wrong";
         }
 	}
-  ?>
+?>
 
 <!DOCTYPE html>
 <html>

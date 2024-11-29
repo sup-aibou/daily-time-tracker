@@ -5,7 +5,7 @@
     include('includes/header.php');
     include('includes/dbconn.php');
 
-    if (strlen($_SESSION['vpmsaid']==0)) {
+    if (strlen($_SESSION['user_id']==0)) {
     header('location:logout.php');
     } else {
 

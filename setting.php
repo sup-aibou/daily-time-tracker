@@ -3,11 +3,11 @@
     error_reporting(0);
     include('includes/dbconn.php');
 
-        if (strlen($_SESSION['vpmsaid']==0)) {
+        if (strlen($_SESSION['user_id']==0)) {
             header('location:logout.php');
         } else {
             if(isset($_POST['set-settings'])){
-                $adminid=$_SESSION['vpmsaid'];
+                $adminid=$_SESSION['user_id'];
                 $cname=$_POST['cname'];
                 $cemail=$_POST['cemail'];
                 $cwebsite=$_POST['cwebsite'];
@@ -76,7 +76,7 @@
 								<div class="form-group">
 
                                 <?php
-                                $adminid=$_SESSION['vpmsaid'];
+                                $adminid=$_SESSION['user_id'];
                                 $ret=mysqli_query($con,"SELECT * from settings where ID='$adminid'");
                                 $cnt=1;
                                 while ($row=mysqli_fetch_array($ret)) {

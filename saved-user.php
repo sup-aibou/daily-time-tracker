@@ -2,7 +2,7 @@
     session_start();
     error_reporting(0);
     include('includes/dbconn.php');
-    if (strlen($_SESSION['vpmsaid']==0)) {
+    if (strlen($_SESSION['user_id']==0)) {
         header('location:logout.php');
         } else {
 ?>
