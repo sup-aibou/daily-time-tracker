@@ -1,6 +1,12 @@
+<!-- Purpose: Establishes a connection to the database -->
 <?php
-    $con=mysqli_connect("127.0.0.1", "root", "", "daily-time-tracker-db");
-    if(mysqli_connect_errno()){
-    echo "Connection Fail".mysqli_connect_error();
-    }
-  ?>
+$host = 'localhost';
+$dbname = 'daily-time-tracker-db';
+$username = '';
+$password = '';
+
+$con = new mysqli($host, $username, $password, $dbname);
+
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
