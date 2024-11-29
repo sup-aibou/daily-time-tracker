@@ -26,28 +26,28 @@
 	</div>
 	<div class="divider"></div>
 
-	<form role="search" action="search-results.php" name="search" method="POST" enctype="multipart/form-data">
+	<!-- <form role="search" action="search-results.php" name="search" method="POST" enctype="multipart/form-data">
 
 
 		<div class="form-group">
 			<input type="text" class="form-control" id="searchdata" name="searchdata" placeholder="Search Vehicle-Reg">
 		</div>
 
-	</form>
+	</form> -->
 	<ul class="nav menu">
 		<li class="<?php if ($page == "dashboard") {
 						echo "active";
 					} ?>"><a href="dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 		<li class="<?php if ($page == "parking-slot") {
 						echo "active";
-					} ?>"><a href="parking-slot.php"><em class="fa fa-automobile">&nbsp;</em> Parking Slot</a></li>
+					} ?>"><a href="parking-slot.php"><em class="fa fa-automobile">&nbsp;</em> TO DO</a></li>
 		<li class="<?php if ($page == "manage-vehicles") {
 						echo "active";
-					} ?>"><a href="manage-vehicles.php"><em class="fa fa-car">&nbsp;</em> Vehicle Entry</a></li>
+					} ?>"><a href="manage-vehicles.php"><em class="fa fa-car">&nbsp;</em> Time Table</a></li>
 		<li class="<?php if ($page == "in-vehicle") {
 						echo "active";
-					} ?>"><a href="in-vehicles.php"><em class="fa fa-toggle-on">&nbsp;</em> IN Vehicles</a></li>
-		<li class="<?php if ($page == "out-vehicle") {
+					} ?>"><a href="in-vehicles.php"><em class="fa fa-toggle-on">&nbsp;</em> Settings</a></li>
+		<!-- <li class="<?php if ($page == "out-vehicle") {
 						echo "active";
 					} ?>"><a href="out-vehicles.php"><em class="fa fa-toggle-off">&nbsp;</em> OUT Vehicles</a></li>
 		<li class="<?php if ($page == "reservation") {
@@ -55,12 +55,12 @@
 					} ?>"><a href="reservation.php"><em class="	fa fa-file-powerpoint-o">&nbsp;</em> Reservation List</a></li>
 		<li class="<?php if ($page == "violation") {
 						echo "active";
-					} ?>"><a href="violation.php"><em class="	fa fa-warning">&nbsp;</em> Violations</a></li>
+					} ?>"><a href="violation.php"><em class="	fa fa-warning">&nbsp;</em> Violations</a></li> -->
 		<li class="nav-header"></li>
 		<li class=><em class="nav-header">&nbsp;</em></a></li>
 
 
-		<?php if ($row['UserType'] == 1): ?>
+		<!-- <?php if ($row['UserType'] == 1): ?>
 
 			<li class=><em class="nav-header">&nbsp;</em><a>Admin Control</a></li>
 			<li class="<?php if ($page == "add-reservation") {
@@ -88,7 +88,7 @@
 							echo "active";
 						} ?>"><a href="admin-list.php"><em class="	fa fa-user">&nbsp;</em> Admin List</a></li>
 
-		<?php endif ?>
+		<?php endif ?> -->
 	</ul>
 
 </div><!--/.sidebar-->

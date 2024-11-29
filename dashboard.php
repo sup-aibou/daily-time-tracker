@@ -13,7 +13,7 @@ if (strlen($_SESSION['user_id'] == 0)) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AUTOMATED CPS </title>
+	<title>Daily Time Record</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -87,7 +87,7 @@ if (strlen($_SESSION['user_id'] == 0)) {
 		<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Parked Vehicles</div>
+						<div class="panel-heading">Time Record</div>
 						<div class="panel-body">
 							<table id="example" class="table table-striped table-hover table-bordered" style="width:100%">
 
@@ -95,11 +95,13 @@ if (strlen($_SESSION['user_id'] == 0)) {
 									<tr>
 										<th>#</th>
 										<th>Date</th>
-										<th>Licensed Plate</th>
-										<th>Manufacturer</th>
-										<th>Category</th>
-										<th>RFID Number</th>
-										<th>Vehicle's Owner</th>
+										<th>Time-In</th>
+										<th>Time-Out</th>
+										<th>Work Duration</th>
+										<th>Client</th>
+										<th>Kind of Work</th>
+										<th>Description</th>
+										<th>Status</th>
 										<th></th>
 
 									</tr>
@@ -125,6 +127,8 @@ if (strlen($_SESSION['user_id'] == 0)) {
 
 											<td><?php echo $row['RFIDNumber']; ?></td>
 
+											<td><?php echo $row['OwnerName']; ?></td>
+											<td><?php echo $row['OwnerName']; ?></td>
 											<td><?php echo $row['OwnerName']; ?></td>
 
 											<td><a href="update-incomingdetail.php?updateid=<?php echo $row['ID']; ?>"><button type="button" class="btn btn-sm btn-danger">Take Action</button></a>

@@ -2,7 +2,7 @@
 <?php
 $host = 'localhost';
 $dbname = 'daily-time-tracker-db';
-$username = '';
+$username = 'root';
 $password = '';
 
 $con = new mysqli($host, $username, $password, $dbname);
