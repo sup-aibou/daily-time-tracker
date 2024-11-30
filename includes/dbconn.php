@@ -19,7 +19,4 @@ try {
     error_log("Database connection failed: " . $e->getMessage());
     die('Database connection failed. Please try again later.');
 }
-
-// Connection successful
-echo 'Database connected successfully.';
 ?>
