@@ -3,12 +3,12 @@
     include('includes/dbconn.php');
     error_reporting(0);
 
-    if (strlen($_SESSION['user_id']==0)) {
+    if (strlen($_SESSION['vpmsaid']==0)) {
     header('location:logout.php');
     } else {
     
     if(isset($_POST['change-password'])){
-        $adminid=$_SESSION['user_id'];
+        $adminid=$_SESSION['vpmsaid'];
         $cpassword=md5($_POST['currentpassword']);
         $newpassword=md5($_POST['newpassword']);
         $query=mysqli_query($con,"SELECT ID from admin where ID='$adminid' and   Password='$cpassword'");
@@ -76,7 +76,7 @@
 								<div class="form-group">
 
                                 <?php
-                                $adminid=$_SESSION['user_id'];
+                                $adminid=$_SESSION['vpmsaid'];
                                 $ret=mysqli_query($con,"SELECT * from admin where ID='$adminid'");
                                 $cnt=1;
                                 while ($row=mysqli_fetch_array($ret)) {

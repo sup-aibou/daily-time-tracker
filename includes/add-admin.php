@@ -19,9 +19,9 @@
             $selectedUserType = $_POST['UserType'];
         
             // Set $UserType based on the selected option
-            if ($selectedUserType == 'Super Admin') {
+            if ($selectedUserType == 'Administrator') {
                 $UserType = 1;
-            } elseif ($selectedUserType == 'Attendant') {
+            } elseif ($selectedUserType == 'Staff') {
                 $UserType = 0;
             }
         }
@@ -58,12 +58,12 @@
 		?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
+		<!--<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="dashboard.php">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Manage Admin</li>
+				<li class="active">Manage Vehicle Entry</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -97,8 +97,8 @@
 										<label>User Type</label>
 										<select class="form-control" name="UserType" id="UserType">
 										<option value="0">Select User Type</option>
-                                        <option >Super Admin</option>
-                                        <option >Attendant</option>
+                                        <option >Administrator</option>
+                                        <option >Staff</option>
 										</select>
 									</div>
 
@@ -122,7 +122,7 @@
 
                                 <div class="form-group">
 									<label>Mobile Number</label>
-									<input type="text" class="form-control" placeholder="Enter Mobile Number" maxlength="13" id="MobileNumber" name="MobileNumber" required>
+									<input type="text" class="form-control" placeholder="Enter Mobile Number" maxlength="13" pattern="[0-9]+" id="MobileNumber" name="MobileNumber" required>
 								</div>
 
                                 <div class="form-group">

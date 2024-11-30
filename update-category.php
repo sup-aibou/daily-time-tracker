@@ -3,13 +3,13 @@
     error_reporting(0);
 
     include('includes/dbconn.php');
-    if (strlen($_SESSION['user_id']==0)) {
+    if (strlen($_SESSION['vpmsaid']==0)) {
     header('location:logout.php');
     } else{
 
     if(isset($_POST['update-category']))
     {
-        $aid=$_SESSION['user_id'];
+        $aid=$_SESSION['vpmsaid'];
        // $catname=$_POST['catename'];
 		$ParkPrice=$_POST['PPrice'];
     $eid=$_GET['editid'];
