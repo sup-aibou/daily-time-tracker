@@ -14,7 +14,7 @@
     else if($numeric_date>=18&&$numeric_date<=23) 
     $welcome_string="Good Evening, "; 
 
-    $adminid=$_SESSION['vpmsaid'];
+    $adminid=$_SESSION['user_id'];
     $ret=mysqli_query($con,"SELECT * from admin where ID='$adminid'");
     $cnt=1;
     while ($row=mysqli_fetch_array($ret)) {

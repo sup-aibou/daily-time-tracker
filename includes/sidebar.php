@@ -8,7 +8,7 @@
 <?php
 include 'dbconn.php';
 
-$adminid = $_SESSION['vpmsaid'];
+$adminid = $_SESSION['user_id'];
 $ret = mysqli_query($con, "SELECT * FROM admin WHERE ID='$adminid'");
 
 if ($row = mysqli_fetch_array($ret)) {
