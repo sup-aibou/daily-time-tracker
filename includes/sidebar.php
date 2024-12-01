@@ -54,6 +54,21 @@
                             <h4 class="text-section">Components</h4>
                         </li>
                         <li class="nav-item">
+                            <a href="index.php" class="<?php if ($page == 'home') {
+                                                                                                echo 'active';
+                                                                                            } ?>" aria-current="page">
+                                <i class="bi bi-house-door-fill"></i>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="records.php" class="<?php if ($page == 'records') {
+                                                                        echo 'active';
+                                                                    } ?>">
+                                <i class="bi bi-speedometer2"></i><p>Records</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#base">
                                 <i class="fas fa-layer-group"></i>
                                 <p>Base</p>

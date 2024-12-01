@@ -5,7 +5,7 @@
 
 <body>
     <div class="wrapper">
-    <?php $page = "home"; include 'includes/sidebar.php'; ?>
+    <?php $page = "records"; include 'includes/sidebar.php'; ?>
 
         <div class="main-panel">
             <?php include 'includes/header.php'; ?> 
@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="page-inner">
                     <div class="page-header">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Records</h4>
                         <ul class="breadcrumbs">
                             <li class="nav-home">
                                 <a href="#">
