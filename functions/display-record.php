@@ -30,16 +30,19 @@ function renderTableRows($result) {
         // Map status to text and design
         if ($status === 1) {
             $statusText = 'Pending';
-            $statusClass = 'p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 bg-yellow-200 rounded-lg bg-opacity-50';
+            $statusClass = 'badge badge-warning';
         } else if ($status === 2) {
-            $statusText = 'Completed';
-            $statusClass = 'p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50';
+            $statusText = 'On going';
+            $statusClass = 'badge badge-info';
         } else if ($status === 3) {
+            $statusText = 'Completed';
+            $statusClass = 'badge badge-success';
+        } else if ($status === 4) {
             $statusText = 'Rescheduled';
-            $statusClass = 'p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50';
+            $statusClass = 'badge badge-danger';
         } else {
             $statusText = 'Unknown';
-            $statusClass = 'bg-gray-200 text-gray-800 px-2 py-1 rounded';
+            $statusClass = 'badge badge-count';
         }
         // Render table row
         // need to add function for the edit
@@ -55,7 +58,6 @@ function renderTableRows($result) {
                 <td class='px-4 py-2 text-left'>
                     <span class='{$statusClass}'>{$statusText}</span>
                 </td>
-                <td class='px-4 py-2 text-left '><button>edit</button></td>
             </tr>";
         $cnt++;
     }
