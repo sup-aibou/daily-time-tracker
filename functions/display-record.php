@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include the database connection file
 include('includes/dbconn.php');
 
@@ -12,7 +13,16 @@ function checkSession() {
 
 // Function to fetch records from the database
 function fetchRecords($con) {
-    $query = "SELECT * FROM record where user_id = 1"; // Modify query as needed
+    // Ensure session variable exists and is valid
+    if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+        // Redirect if session variable is not set
+        header('location:logout.php');
+        exit();
+    }
+
+    // Use the user_id safely in the query
+    $user_id = $_SESSION['user_id'];
+    $query = "SELECT * FROM record WHERE user_id = '$user_id'"; // Modify query to properly use user_id
     return mysqli_query($con, $query);
 }
 

@@ -13,10 +13,6 @@ if (isset($con)) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
-
     // Retrieve and sanitize form inputs
     $username = trim($_POST['username']);
     $name = trim($_POST['name']);

@@ -8,14 +8,14 @@ if (isset($_POST['login'])) {
     $password = $_POST['password']; // Get the password entered by the user
 
     // Query to get the stored hash for the entered username
-    $query = mysqli_query($con, "SELECT ID, password FROM users WHERE username='$username'");
+    $query = mysqli_query($con, "SELECT id, password FROM users WHERE username='$username'");
     $ret = mysqli_fetch_array($query);
 
     if ($ret) {
         // Check if the entered password matches the stored hash
         if (password_verify($password, $ret['password'])) {
             // Password is correct
-            $_SESSION['user_id'] = $ret['ID'];
+            $_SESSION['user_id'] = $ret['id'];
             header("Location: ./index.php");
         } else {
             // Incorrect password
