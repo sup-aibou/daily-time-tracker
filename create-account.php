@@ -1,3 +1,9 @@
+<?php
+include 'includes/dbconn.php';
+// Include the functions file to access PHP logic
+include('functions/create-account.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +16,17 @@
             <div class="card-body">
                 <h5 class="card-title text-center mb-4">Login</h5>
 
+                <!-- Display Errors -->
+                <?php if (!empty($errors)): ?>
+                    <div class="alert alert-danger">
+                        <?php foreach ($errors as $error): ?>
+                            <p><?php echo htmlspecialchars($error); ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
                 <!-- Login Form -->
-                <form>
+                <form method="POST" action="functions/create-account.php">
                     <div class="form-group form-group-default">
                         <label for="username">Username</label>
                         <input
@@ -53,25 +68,20 @@
                             placeholder="Enter your Password"
                             required />
                     </div>
-                    <!-- Remember Me Checkbox -->
-                    <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                    </div>
-
-                    <!-- Forgot Password Link -->
-                    <div class="mb-3 text-end">
-                        <a href="#">Forgot password?</a>
+                    <div class="form-group form-group-default">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input
+                            id="confirm_password"
+                            type="password"
+                            name="confirm_password"
+                            class="form-control"
+                            placeholder="Confirm your Password"
+                            required />
                     </div>
 
                     <!-- Login Button -->
-                    <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
                 </form>
-
-                <!-- Sign Up Link -->
-                <div class="text-center mt-3">
-                    <p>Don't have an account? <a href="#">Sign up</a></p>
-                </div>
             </div>
         </div>
     </div>

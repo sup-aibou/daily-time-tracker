@@ -8,6 +8,7 @@ $db_name = getenv('DB_NAME') ?: 'daily-time-tracker-db'; // Default database nam
 // Use mysqli_report to handle errors properly
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
+
 try {
     // Establish a secure database connection
     $con = new mysqli($db_host, $db_user, $db_pass, $db_name);
